@@ -1,0 +1,40 @@
+# Database (overridden by DATABASE_URL in .env)
+database:
+  url: postgresql://user:password@localhost:5432/comp_crawl
+
+# Email settings (credentials in .env)
+email:
+  smtp_server: smtp.gmail.com
+  smtp_port: 587
+  subject_prefix: "IILM Competitive Intel"
+
+# Scheduling
+schedule:
+  # Cron expression: every Sunday at 8 PM IST
+  day_of_week: sun
+  hour: 20
+  minute: 0
+
+# Crawler settings
+crawler:
+  # Default max depth for link discovery (overridden per-competitor)
+  default_max_depth: 2
+  # Max pages to crawl per competitor (safety limit)
+  max_pages_per_competitor: 50
+  # Timeout per page in seconds
+  page_timeout: 30
+  # Delay between requests to same domain (seconds)
+  politeness_delay: 2
+  # Try to discover pages from sitemap.xml
+  use_sitemap: true
+  # Only keep pages the LLM deems educationally relevant
+  filter_relevant: true
+
+# LLM settings (model name via .env LLM_MODEL)
+llm:
+  # Auto-categorize page content using LLM (true/false)
+  auto_categorize: true
+  # Max tokens for LLM calls
+  max_tokens: 500
+  # Temperature for LLM calls
+  temperature: 0.2

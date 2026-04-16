@@ -1,0 +1,58 @@
+# Competitors to monitor
+# The crawler will:
+#   1. Try to fetch /sitemap.xml from each website
+#   2. Follow internal links starting from seed_urls (or homepage if none given)
+#   3. Respect max_depth to limit crawl scope
+#   4. Use LLM to filter only educationally relevant pages
+#
+# You can optionally pin specific URLs that must always be crawled.
+
+competitors:
+  - name: Amity University
+    website: https://www.amity.edu
+    active: true
+    max_depth: 2
+    seed_urls:
+      - https://www.amity.edu/programmes/
+      - https://www.amity.edu/admission/
+    pinned_urls: []  # Optional: always crawl these exact URLs
+
+  - name: Ashoka University
+    website: https://www.ashoka.edu.in
+    active: true
+    max_depth: 2
+    seed_urls:
+      - https://www.ashoka.edu.in/academics/
+      - https://www.ashoka.edu.in/admission/
+
+  - name: IMT Ghaziabad
+    website: https://www.imt.edu
+    active: true
+    max_depth: 2
+    seed_urls:
+      - https://www.imt.edu/programmes/
+      - https://www.imt.edu/admissions/
+
+  - name: FORE School of Management
+    website: https://www.fsm.ac.in
+    active: true
+    max_depth: 2
+    seed_urls:
+      - https://www.fsm.ac.in/programmes/
+      - https://www.fsm.ac.in/admissions/
+
+  - name: Jaipuria Institute of Management
+    website: https://www.jaipuria.ac.in
+    active: true
+    max_depth: 2
+    seed_urls:
+      - https://www.jaipuria.ac.in/programmes/
+      - https://www.jaipuria.ac.in/admissions/
+
+  - name: BIMTECH
+    website: https://www.bimtech.ac.in
+    active: true
+    max_depth: 2
+    seed_urls:
+      - https://www.bimtech.ac.in/programmes/
+      - https://www.bimtech.ac.in/admissions/
